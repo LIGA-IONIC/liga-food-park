@@ -1,20 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Food Park
     </ion-title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>.tb{background:#65a30d}.btn.main{background:#65a30d}</style>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="topo"><h1>Food Park</h1></div>
+<div class="grid">
+  <div class="bloco">
+    <h2>1 Â· Filtro por truck</h2>
+    <div class="fone">
+      <div class="tb"><span>Food Park</span><span style="font-weight:600;font-size:0.8rem;">sair</span></div>
+      <div class="pad">
+        <span class="chip">Todos</span><span class="chip on">Smash IF</span><span class="chip">La Fiesta</span><span class="chip">Gelato</span>
+        <div class="item" style="margin-top:8px;"><div><strong>Burger smash</strong><div class="muted">Smash IF</div></div><div class="preco">R$ 22</div></div>
+        <div class="item"><div><strong>Batata cheddar</strong><div class="muted">Smash IF</div></div><div class="preco">R$ 14</div></div>
+        <button class="btn main">Ver combo (0)</button>
+      </div>
+    </div>
   </div>
+  <div class="bloco">
+    <h2>2 Â· Taxa R$ 3</h2>
+    <div class="fone">
+      <div class="tb"><span>Combo</span><span style="font-weight:600;font-size:0.8rem;">voltar</span></div>
+      <div class="pad">
+        <div class="item"><div><strong>Burger smash</strong></div><div class="preco">R$ 22</div></div>
+        <div class="item"><div><strong>Taco</strong></div><div class="preco">R$ 18</div></div>
+        <div class="total">
+          <div class="linha"><span>Subtotal</span><span>R$ 40,00</span></div>
+          <div class="linha"><span>Taxa de entrega</span><span>R$ 3,00</span></div>
+          <div class="linha g"><span>Total</span><span>R$ 43,00</span></div>
+        </div>
+        <button class="btn main">Pedir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </ion-content>
