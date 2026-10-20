@@ -1,0 +1,62 @@
+<ion-content class="ion-padding">
+
+  <div class="login-wrap">
+
+
+    <div class="login-marca">
+      <h1>Food Park</h1>
+      <p>Entre e peça algo na praça!</p>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+
+        <ion-item lines="none">
+          <ion-label position="stacked">E-mail</ion-label>
+          <ion-input
+            type="email"
+            [(ngModel)]="email"
+            placeholder="Digite seu email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label position="stacked">Senha</ion-label>
+          <ion-input
+            type="password"
+            [(ngModel)]="senha"
+            placeholder="Digite sua senha">
+          </ion-input>
+        </ion-item>
+
+        <p class="msg-erro" *ngIf="mensagemErro">
+          {{ mensagemErro }}
+        </p>
+
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="login()">
+          Entrar na Conta
+        </ion-button>
+
+        <div class="divisor"><span>ou</span></div>
+
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="loginGoogle()">
+          Entrar com Google
+        </ion-button>
+
+        <ion-button expand="block" fill="clear" routerLink="/cadastro">
+          Ainda não tenho cadastro
+        </ion-button>
+  
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
