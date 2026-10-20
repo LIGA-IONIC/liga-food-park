@@ -1,12 +1,44 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { AuthService } from '../services/authService';
+import { Router } from '@angular/router';
+import { produtoService } from '../services/produtoService';
+import { Produto } from '../models/produto';
+import { IONIC_ELEMENTS } from '../imports';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IONIC_ELEMENTS],
 })
 export class HomePage {
-  constructor() {}
+
+  produtos: Produto[] = [];
+
+  constructor(
+    public auth: AuthService,
+    public produtoService: produtoService,
+    private router: Router,
+  ) {
+    this.produtos = this.produtoService.produtos
+  }
+
+  async ngOnInit() {
+    const usuario = await this.auth.esperarUsuario();
+    if (!usuario) {
+      this.router.navigate(['/login']);
+      return;
+    }
+  }
+
+  finalizar() {
+    this.router.navigate(['/comanda'])
+  }
+
+
+  async sair() {
+    await this.auth.sair();
+    this.router.navigate(['/login']);
+  }
+
 }
